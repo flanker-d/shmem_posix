@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
 #define SHARMEME_NAME "/test.shm"
 #define SHMEM_SIZE 1048576
-  int shmid = shm_open(SHARMEME_NAME, O_CREAT, 0666);
+  int shmid = shm_open(SHARMEME_NAME, (O_CREAT | O_RDWR), 0666);
   if(shmid == -1)
   {
     perror("Ошибка при создании общей памяти: ");
